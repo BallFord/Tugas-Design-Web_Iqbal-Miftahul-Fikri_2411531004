@@ -1,12 +1,12 @@
 const CACHE_NAME = 'my-website-cache-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/about.html',
-  '/contact.html',
-  '/offline.html',
-  '/images/BgUnand.jpg',
-  '/images/Iqbalslebew.jpeg'
+  '.',
+  'index.html',
+  'about.html',
+  'contact.html',
+  'offline.html',
+  'images/BgUnand.jpg',
+  'images/Iqbalslebew.jpeg'
 ];
 
 self.addEventListener('install', event => {
@@ -27,7 +27,7 @@ self.addEventListener('fetch', event => {
           return response;
         }
         return fetch(event.request).catch(() => {
-          return caches.match('/offline.html');
+          return caches.match('offline.html');
         });
       })
   );
@@ -46,4 +46,5 @@ self.addEventListener('activate', event => {
       );
     })
   );
+
 });
