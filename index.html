@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas Desain Web_Iqbal Miftahul Fikri_2411531004</title>
+    <title>About Me</title>
 
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#000000"/> 
+    <meta name="theme-color" content="#000000"/>
 
     <style>
         body {
@@ -14,6 +14,7 @@
             margin: 0;
             color: white; 
             font-family: "Times New Roman", Times, serif;
+            min-height: 100vh;
         }
 
         body::before {
@@ -25,7 +26,7 @@
             height: 100%;
             background: 
                 linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
-                url('images/BgUnand.jpg');
+                url('images/BgUnand.jpg'); 
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -34,8 +35,8 @@
 
         header {
             text-align: center;
-            padding: 20px 0; 
-            border-bottom: 1px solid #eee; 
+            padding: 20px 0;
+            border-bottom: 1px solid rgb(255, 255, 255); 
         }
 
         nav ul {
@@ -53,25 +54,77 @@
             color: white; 
             text-decoration: none;
             font-size: 18px;
+            font-family: "Times New Roman", Times, serif;
+            cursor: pointer;
         }
 
         nav a:hover {
             text-decoration: underline;
         }
 
-        main {
-            padding: 20px;
-            
-        }
-        
-        h1 {
-            text-align: center;
-            font-size: 25px;
+        .card-container {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 15px 30px;
+            max-width: 950px;
+            width: 90%;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            margin: 30px auto;
         }
 
-        p {
-            font-size: 16px;
-            line-height: 1.6; 
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .profile-header img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .profile-header h2 {
+            margin: 0 0 5px 0;
+            font-size: 1.8em;
+        }
+
+        .profile-header p {
+            margin: 0;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .profile-section {
+            margin-bottom: 10px;
+        }
+
+        .profile-section h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            border-left: 3px solid white;
+            padding-left: 10px;
+        }
+
+        .profile-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .profile-section li {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 8px 15px;
+            margin-bottom: 5px;
+            font-size: 0.85em;
         }
     </style>
 </head>
@@ -80,40 +133,101 @@
     <header>
         <nav>
             <ul>
-                <li><a href="about.html" target="_blank">About</a></li>
-                <li><a href="contact.html" target="_blank">Contact</a></li>
+                <li><a href="#" id="homeLink">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h1>Hello Guys 👋</h1>
-        <p>
-            Website ini dibikin dengan tujuan untuk menyelesaikan tugas pertama saya dalam mata kuliah Desain Web. Pada mata kuliah ini, saya diberi kesempatan untuk memahami dasar-dasar pembuatan halaman web, mulai dari struktur dalam penggunaan HTML sampai dengan pengaturan tampilan dengan CSS.
-        </p>
-        <p>
-            Di website ini terdapat link di navbar bernama About yang berisi informasi tentang diri saya, serta link Contact yang memuat detail kontak seperti email, nomor telepon, alamat, dan akun media sosial.
-        </p>
-        <p>
-            Saat ini, website telah ditingkatkan menjadi sebuah <strong>Progressive Web App (PWA)</strong>. Ini berarti Anda bisa meng-install halaman ini di perangkat Anda untuk akses yang lebih cepat dan bahkan bisa diakses saat offline.
-        </p>
-    </main>
+    <div class="card-container">
+        
+        <div class="profile-header">
+            <img src="images/Iqbalslebew.jpeg" alt="Foto Iqbal Miftahul Fikri">
+            <div class="profile-intro">
+                <h2>About Me</h2>
+                <p>Pada halaman ini, terdapat informasi singkat tentang diri saya.</p>
+            </div>
+        </div>
 
-    <footer>
-    </footer>
+        <div class="profile-section">
+            <h3>Informasi Pribadi</h3>
+            <ul>
+                <li><strong>Nama:</strong> Iqbal Miftahul Fikri</li>
+                <li><strong>NIM:</strong> 2411531004</li>
+                <li><strong>Angkatan:</strong> Informatika 24</li>
+                <li><strong>Pendidikan:</strong> Universitas Andalas, Fakultas Teknologi Informasi, Departemen Informatika</li>
+            </ul>
+        </div>
+
+        <div class="profile-section">
+            <h3>Di Dalam Kampus</h3>
+            <ul>
+                <li>Anggota HIMA Informatika 24, sebagai staff Divisi Internal</li>
+                <li>Kepanitiaan FESTIKA (Festival Informatika)</li>
+            </ul>
+        </div>
+
+        <div class="profile-section">
+            <h3>Di Luar Kampus</h3>
+            <ul>
+                <li>Band sebagai Drummer</li>
+                <li>Anggota Tim E-Sport Mobile Legend</li>
+                <li>Worker joki dalam game Mobile Legend</li>
+            </ul>
+        </div>
+
+        <div class="profile-section">
+            <h3>Hobi & Minat</h3>
+            <ul>
+                <li>Bermain dan Mendengarkan Musik</li>
+                <li>Gaming</li>
+                <li>Olahraga (Renang)</li>
+                <li>Otomotif</li>
+            </ul>
+        </div>
+
+    </div>
 
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js')
-                    .then(registration => {
-                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                    })
-                    .catch(err => {
-                        console.log('ServiceWorker registration failed: ', err);
-                    });
+        var homeLink = document.getElementById('homeLink');
+        if (homeLink) {
+            homeLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                window.close();
+                if (window.opener) {
+                    window.opener.focus();
+                }
             });
         }
+        
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js');
+            });
+        }
+
+        // Tombol Install PWA
+        let deferredPrompt;
+        window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        const installBtn = document.getElementById("installBtn");
+        installBtn.style.display = "inline-block";
+
+        installBtn.addEventListener("click", () => {
+        installBtn.style.display = "none";
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choice) => {
+          if (choice.outcome === "accepted") {
+            console.log("User menginstall aplikasi");
+          } else {
+            console.log("User batal install");
+          }
+          deferredPrompt = null;
+        });
+    });
+});  
+
     </script>
 
 </body>
