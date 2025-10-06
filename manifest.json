@@ -2,7 +2,7 @@
   "name": "Website Iqbal Miftahul Fikri",
   "short_name": "Iqbal's Web",
   "description": "Website tugas PWA oleh Iqbal Miftahul Fikri.",
-  "start_url": "/index.html",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#212529",
   "theme_color": "#212529",
