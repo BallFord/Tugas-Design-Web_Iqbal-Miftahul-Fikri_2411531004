@@ -1,4 +1,4 @@
-const CACHE_NAME = 'my-website-cache-v2';
+const CACHE_NAME = 'my-website-cache-v3';
 const urlsToCache = [
   '.',
   'index.html',
@@ -15,6 +15,7 @@ self.addEventListener('install', event => {
       .then(cache => {
         return cache.addAll(urlsToCache);
       })
+      .then(() => self.skipWaiting())
   );
 });
 
@@ -29,7 +30,7 @@ self.addEventListener('activate', event => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim())
   );
 });
 
