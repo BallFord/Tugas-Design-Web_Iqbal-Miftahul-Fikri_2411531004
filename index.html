@@ -101,6 +101,8 @@
 
     <footer>
     </footer>
+    <!-- Tombol Install PWA -->
+    <button id="installBtn">Install Aplikasi</button>
 
     <script>
         if ('serviceWorker' in navigator) {
@@ -114,6 +116,29 @@
                     });
             });
         }
+
+        // Tombol Install PWA
+    let deferredPrompt;
+    const installBtn = document.getElementById("installBtn");
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const installBtn = document.getElementById("installBtn");
+      installBtn.style.display = "inline-block";
+
+      installBtn.addEventListener("click", () => {
+        installBtn.style.display = "none";
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choice) => {
+          if (choice.outcome === "accepted") {
+            console.log("User menginstall aplikasi");
+          } else {
+            console.log("User batal install");
+          }
+          deferredPrompt = null;
+        });
+      });
+    });
     </script>
 
 </body>
