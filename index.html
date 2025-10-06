@@ -77,7 +77,7 @@
         }
 
         #install-button {
-            display: none;
+            display: none; 
             background-color: rgba(255, 255, 255, 0.15);
             color: white;
             border: 1px solid white;
@@ -91,31 +91,6 @@
 
         #install-button:hover {
             background-color: rgba(255, 255, 255, 0.3);
-        }
-
-        #ios-install-prompt {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #333;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 12px;
-            text-align: center;
-            font-size: 16px;
-            z-index: 1000;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        .share-icon {
-            width: 18px;
-            height: 18px;
-            vertical-align: middle;
-            margin: 0 4px;
         }
     </style>
 </head>
@@ -142,17 +117,13 @@
         <p>
             Saat ini, website telah ditingkatkan menjadi sebuah <strong>Progressive Web App (PWA)</strong>. Ini berarti Anda bisa meng-install halaman ini di perangkat Anda untuk akses yang lebih cepat dan bahkan bisa diakses saat offline.
         </p>
-        <div id="ios-install-prompt">
-            Untuk menginstal aplikasi ini di iPhone Anda, ketuk tombol <b>Share</b> 
-            <img src="https://developer.apple.com/design/human-interface-guidelines/images/framework-and-platform-icons/sf-symbol-share_2x.png" alt="Share Icon" class="share-icon">
-            lalu pilih <b>"Add to Home Screen"</b>.
-        </div>
     </main>
 
     <footer>
     </footer>
 
     <script>
+        
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('service-worker.js')
@@ -187,25 +158,6 @@
                 installButton.style.display = 'none';
             }
         });
-
-        function isIOS() {
-            return [
-                'iPad Simulator',
-                'iPhone Simulator',
-                'iPod Simulator',
-                'iPad',
-                'iPhone',
-                'iPod'
-            ].includes(navigator.platform)
-            || (navigator.userAgent.includes("Mac") && "ontouchend" in document);
-        }
-
-        const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
-
-        if (isIOS() && !isInStandaloneMode()) {
-            const iosPrompt = document.getElementById('ios-install-prompt');
-            iosPrompt.style.display = 'block';
-        }
     </script>
 
 </body>
