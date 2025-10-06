@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000"/>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            padding: 0;
+            min-height: 100vh;
+            color: #f0f0f0;
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
+                url('images/BgUnand.jpg'); 
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        .site-header {
+            width: 100%;
+            padding: 20px 0;
+            border-bottom: 1px solid rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        .site-header nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .site-header nav li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .site-header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+            cursor: pointer;
+        }
+
+        .site-header nav a:hover, .site-header nav a.active {
+            text-decoration: underline;
+        }
+
+        a {
+            color: #d1e0ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        h1 {
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        main {
+            text-align: center;
+            width: 100%;
+            padding-top: 20px;
+        }
+
+        main p {
+            margin: 5px 0;
+        }
+
+        .social-media-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 20px 0;
+        }
+
+        .social-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .social-item img {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+        }
+        
+        .social-item a {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #f0f0f0;
+        }
+        
+        #formSection {
+            background-color: rgba(244, 244, 244, 0.45);
+            max-width: 500px;
+            width: 90%;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            color: #333;
+        }
+        
+        #formSection h2 {
+            color: #333;
+            text-shadow: none;
+            text-align: center;
+            font-weight: bold;      
+            font-size: 1.8em;       
+            margin-bottom: 35px;   
+        }
+        
+        form {
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        form div {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 1.1em;
+            color: #fffefe;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px 0;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            border-radius: 0;
+            box-sizing: border-box;
+            background-color: transparent;
+            text-align: center;
+            font-size: 1em;
+            color: #333;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-bottom-color: #555;
+        }
+
+        .radio-group {
+             text-align: center;
+        }
+
+        .radio-group p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .radio-group label {
+            display: inline-block;
+            text-decoration: none;
+            font-weight: normal;
+            margin: 0 10px 0 0;
+            color: #333;
+            text-align: center;
+        }
+        
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        
+        button {
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 10px auto;
+            display: block;
+            min-width: 250px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+        
+        button[type="submit"] {
+            background-color: #4CAF50;
+        }
+        
+        #formSection {
+            display: none;
+        }
+
+        #tombolTampilForm {
+            background-color: #007bff; 
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <ul>
+                <li><a href="#" id="homeLink">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Contact 📞</h1>
+        <p>Email : <a href="mailto:iqbalmiftahulfikri@gmail.com">iqbalmiftahulfikri@gmail.com</a></p>
+        <p>No Telp : <a href="tel:081371832190">081371832190</a> / <a href="tel:082173528845">082173528845</a></p>
+        <p>Alamat : Jl. Dr. Moh. Hatta Kapalo Koto No.108, RT.03/RW.02, Limau Manis, Kec. Pauh, Kota Padang, Sumatera Barat 25176</p>
+        <p>Media Sosial :</p>
+        
+        <div class="social-media-container">
+            <div class="social-item">
+                <a href="https://www.instagram.com/qbalfkr" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                </a>
+                <a href="https://www.instagram.com/qbalfkr" target="_blank">@qbalfkr</a>
+            </div>
+            <div class="social-item">
+                <a href="https://wa.me/6281371832190" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
+                </a>
+                <a href="https://wa.me/6281371832190" target="_blank">081371832190</a>
+            </div>
+        </div>
+    </main>
+    
+    <button id="tombolTampilForm">Kirim Pesan Lewat Form</button>
+
+    <section id="formSection">
+        <h2>Kirim Pesan</h2>
+        <form id="contactForm">
+            <div>
+                <label for="nama">Nama :</label>
+                <input type="text" id="nama" name="nama" required>
+            </div>
+            <div>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="kategori">Kategori Pesan :</label>
+                <select id="kategori" name="kategori">
+                    <option value="pertanyaan">Pertanyaan</option>
+                    <option value="saran">Saran</option>
+                    <option value="masalah">Masalah</option>
+                </select>
+            </div>
+            <div>
+                <label for="pesan">Pesan :</label>
+                <textarea id="pesan" name="pesan" rows="4" required></textarea>
+            </div>
+            <div class="radio-group">
+                <p>Apakah Anda ingin menerima balasan?</p>
+                <label>
+                    <input type="radio" name="balasan" value="ya" checked> Ya
+                </label>
+                <label>
+                    <input type="radio" name="balasan" value="tidak"> Tidak
+                </label>
+            </div>
+            <div>
+                <button type="submit">Kirim Pesan</button>
+            </div>
+        </form>
+    </section>
+    
+    <script>
+        var homeLink = document.getElementById('homeLink');
+        if (homeLink) {
+            homeLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                window.close();
+                if (window.opener) {
+                    window.opener.focus();
+                }
+            });
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            alert('Form berhasil dikirim!');
+            this.reset();
+        });
+        
+        const tombolTampilForm = document.getElementById('tombolTampilForm');
+        const formSection = document.getElementById('formSection');
+
+        tombolTampilForm.addEventListener('click', function() {
+            formSection.style.display = 'block'; 
+            tombolTampilForm.style.display = 'none'; 
+        });
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+</html>

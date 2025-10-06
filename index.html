@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Desain Web_Iqbal Miftahul Fikri_2411531004</title>
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000"/> 
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            color: white; 
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
+                url('images/BgUnand.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0; 
+            border-bottom: 1px solid #eee; 
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white; 
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="about.html" target="_blank">About</a></li>
+                <li><a href="contact.html" target="_blank">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Hello Guys 👋</h1>
+        <p>
+            Website ini dibikin dengan tujuan untuk menyelesaikan tugas pertama saya dalam mata kuliah Desain Web. Pada mata kuliah ini, saya diberi kesempatan untuk memahami dasar-dasar pembuatan halaman web, mulai dari struktur dalam penggunaan HTML sampai dengan pengaturan tampilan dengan CSS.
+        </p>
+        <p>
+            Di website ini terdapat link di navbar bernama About yang berisi informasi tentang diri saya, serta link Contact yang memuat detail kontak seperti email, nomor telepon, alamat, dan akun media sosial.
+        </p>
+        <p>
+            Saat ini, website telah ditingkatkan menjadi sebuah <strong>Progressive Web App (PWA)</strong>. Ini berarti Anda bisa meng-install halaman ini di perangkat Anda untuk akses yang lebih cepat dan bahkan bisa diakses saat offline.
+        </p>
+    </main>
+
+    <footer>
+    </footer>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+
+</body>
+</html>
