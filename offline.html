@@ -37,5 +37,12 @@
         <h1>Anda Sedang Offline 📶</h1>
         <p>Maaf, koneksi internet Anda terputus. Silakan periksa koneksi Anda dan coba lagi.</p>
     </div>
+
+    <script>
+        window.addEventListener('online', () => {
+            alert('Anda kembali online. Kembali ke halaman utama.');
+            window.location.href = 'index.html';
+        });
+    </script>
 </body>
 </html>
