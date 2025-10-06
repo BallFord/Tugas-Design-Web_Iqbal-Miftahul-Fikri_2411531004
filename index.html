@@ -42,6 +42,9 @@
             list-style-type: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         nav ul li {
@@ -61,7 +64,6 @@
 
         main {
             padding: 20px;
-            
         }
         
         h1 {
@@ -73,6 +75,24 @@
             font-size: 16px;
             line-height: 1.6; 
         }
+
+        /* Gaya untuk tombol install */
+        #install-button {
+            display: none; /* Tombol disembunyikan secara default */
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+            padding: 8px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: "Times New Roman", Times, serif;
+            transition: background-color 0.3s;
+        }
+
+        #install-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -80,6 +100,7 @@
     <header>
         <nav>
             <ul>
+                <li><button id="install-button">Install App</button></li>
                 <li><a href="about.html" target="_blank">About</a></li>
                 <li><a href="contact.html" target="_blank">Contact</a></li>
             </ul>
@@ -103,6 +124,7 @@
     </footer>
 
     <script>
+        // Kode pendaftaran Service Worker (sudah ada sebelumnya)
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('service-worker.js')
@@ -114,9 +136,38 @@
                     });
             });
         }
+
+        // --- Logika untuk Tombol Install PWA ---
+        let deferredPrompt;
+        const installButton = document.getElementById('install-button');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Mencegah browser menampilkan prompt instalasi default
+            e.preventDefault();
+            // Menyimpan event agar bisa dipicu nanti saat tombol diklik
+            deferredPrompt = e;
+            // Menampilkan tombol install buatan kita
+            installButton.style.display = 'block';
+        });
+
+        installButton.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                // Menampilkan prompt instalasi
+                deferredPrompt.prompt();
+                // Menunggu pengguna merespons prompt
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                } else {
+                    console.log('User dismissed the install prompt');
+                }
+                // Event ini hanya bisa digunakan sekali
+                deferredPrompt = null;
+                // Sembunyikan tombol setelah digunakan
+                installButton.style.display = 'none';
+            }
+        });
     </script>
 
 </body>
-
 </html>
-
