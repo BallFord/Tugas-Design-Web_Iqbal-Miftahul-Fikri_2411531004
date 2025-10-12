@@ -6,7 +6,8 @@ const urlsToCache = [
   'contact.html',
   'offline.html',
   'images/BgUnand.jpg',
-  'images/Iqbalslebew.jpeg'
+  'images/Iqbalslebew.jpeg',
+  'LogoBallFord.png'
 ];
 
 self.addEventListener('install', event => {
